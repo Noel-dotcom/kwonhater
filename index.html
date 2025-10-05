@@ -6,6 +6,37 @@
   <title>Enter Password</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;900&family=Roboto&display=swap" rel="stylesheet" />
   <style>
+  h2 {
+  color: #222222;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.glow {
+  color: #9c6fff; /* same purple tone as hover */
+  text-shadow:
+    0 0 4px rgba(156, 111, 255, 0.8),
+    0 0 10px rgba(156, 111, 255, 0.5),
+    0 0 20px rgba(156, 111, 255, 0.3);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 4px rgba(156, 111, 255, 0.8),
+      0 0 10px rgba(156, 111, 255, 0.5),
+      0 0 20px rgba(156, 111, 255, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 6px rgba(156, 111, 255, 0.9),
+      0 0 14px rgba(156, 111, 255, 0.7),
+      0 0 25px rgba(156, 111, 255, 0.4);
+  }
+}
+
     body {
       margin: 0;
       font-family: 'Roboto', sans-serif;
@@ -76,7 +107,8 @@
 </head>
 <body>
   <div id="passwordScreen">
-    <input type="password" id="passwordInput" placeholder="Enter password..." autocomplete="off" />
+    <h2>Only you <span class="glow">AK</span>, can open</h2>
+    <input type="password" id="passwordInput" placeholder="Enter the (same) password..." autocomplete="off" />
     <button id="submitPassword">Unlock</button>
     <p id="errorMsg"></p>
   </div>
