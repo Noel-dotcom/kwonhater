@@ -1,8 +1,10 @@
+/* Reset and base setup */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Georgia", serif;
   background: #1e1e2f;
@@ -14,6 +16,8 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
+
+/* Intro text */
 .intro {
   text-align: center;
   font-size: 1.4rem;
@@ -21,6 +25,8 @@ body {
   opacity: 1;
   transition: opacity 1s ease;
 }
+
+/* Read button */
 .btn {
   padding: 10px 20px;
   font-size: 1rem;
@@ -31,9 +37,12 @@ body {
   color: rgb(5, 2, 2);
   transition: 0.3s;
 }
+
 .btn:hover {
   background: #b1acad;
 }
+
+/* Letter paper */
 .letter {
   display: none;
   background: repeating-linear-gradient(
@@ -52,16 +61,20 @@ body {
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: left;
-  position: relative;
+  position: relative; /* important for anchoring signature */
   white-space: pre-wrap;
   overflow-wrap: break-word;
   font-family: "Courier New", monospace;
   overflow: visible;
 }
+
+/* Typed text */
 .letter p {
   margin-top: -55px;
   overflow: hidden;
 }
+
+/* Paper holes (left side) */
 .letter::before {
   content: "";
   position: absolute;
@@ -76,16 +89,17 @@ body {
   pointer-events: none;
 }
 
-/* Signature button at bottom-right of the paper */
+/* Signature image (button to next page) */
 .signature {
   position: absolute;
   bottom: 15px;
   right: 20px;
-  width: 65px;        /* adjust to make it smaller or bigger */
+  width: 60px; /* small and neat */
   height: auto;
   cursor: pointer;
   opacity: 0.9;
   transition: transform 0.2s ease, opacity 0.3s ease;
+  z-index: 10;
 }
 
 .signature:hover {
