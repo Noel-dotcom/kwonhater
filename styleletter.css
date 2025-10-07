@@ -92,7 +92,7 @@ body {
 /* Signature image (button to next page) */
 .signature {
   position: absolute;
-  bottom: 15px;
+  bottom: 3px;
   right: 20px;
   width: 150px; /* small and neat */
   height: auto;
