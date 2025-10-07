@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enter Password</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;900&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+  h2 {
+  color: #222222;
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.glow {
+  color: #9c6fff; /* same purple tone as hover */
+  text-shadow:
+    0 0 4px rgba(156, 111, 255, 0.8),
+    0 0 10px rgba(156, 111, 255, 0.5),
+    0 0 20px rgba(156, 111, 255, 0.3);
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 4px rgba(156, 111, 255, 0.8),
+      0 0 10px rgba(156, 111, 255, 0.5),
+      0 0 20px rgba(156, 111, 255, 0.3);
+  }
+  50% {
+    text-shadow:
+      0 0 6px rgba(156, 111, 255, 0.9),
+      0 0 14px rgba(156, 111, 255, 0.7),
+      0 0 25px rgba(156, 111, 255, 0.4);
+  }
+}
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #3b3b3b;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    #passwordScreen img {
+      max-width: 300px;
+      margin: 0 auto 20px;
+      display: block;
+      background: transparent;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    input[type="password"] {
+      padding: 10px 5px;
+      font-size: 1rem;
+      margin: 1rem 0;
+      border: none;
+      border-bottom: 2px solid #222222; /* updated royal purple */
+      background: transparent;
+      outline: none;
+      width: 250px;
+      max-width: 90vw;
+      font-family: 'Inter', sans-serif;
+      font-weight: 100; /* very thin */
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="password"]:focus {
+      border-bottom: 2px solid #9c6fff; /* lighter purple on focus */
+    }
+
+    button {
+      padding: 14px 30px;
+      background: #222222; /* updated royal purple */
+      color: white;
+      border: none;
+      border-radius: 20px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 900; /* Inter Black */
+      text-transform: uppercase;
+      font-size: 1.05rem;
+      cursor: pointer;
+      box-shadow: 0 0px 20px rgba(129, 69, 241, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: #9c6fff; /* lighter hover purple */
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(156, 111, 255, 0.35);
+    }
+
+    p#errorMsg {
+      color: red;
+      height: 1.5rem;
+      margin: 0.5rem 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="passwordScreen">
+    <input type="password" id="passwordInput" placeholder="Enter password..." autocomplete="off" />
+    <h2>Only you <span class="glow">AK</span>, can open</h2>
+    <input type="password" id="passwordInput" placeholder="Enter the (same) password..." autocomplete="off" />
+    <button id="submitPassword">Unlock</button>
+    <p id="errorMsg"></p>
+  </div>
+
+  <script>
+    const correctPassword = "noelxlexi<3";
+
+    document.getElementById("submitPassword").addEventListener("click", () => {
+      const entered = document.getElementById("passwordInput").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+      if (entered === correctPassword) {
+        window.location.href = "match.html";
+      } else {
+        errorMsg.textContent = "Oops! That's not the right password.";
+      }
+    });
+
+    document.getElementById("passwordInput").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        document.getElementById("submitPassword").click();
+      }
+    });
+  </script>
+</body>
+</html>
