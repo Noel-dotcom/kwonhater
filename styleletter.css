@@ -1,64 +1,94 @@
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: 'Inter', sans-serif;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
+body {
+  font-family: "Georgia", serif;
+  background: #1e1e2f;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+}
 .intro {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
   text-align: center;
-  white-space: pre-line;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  opacity: 1;
+  transition: opacity 1s ease;
 }
-
 .btn {
-  background-color: #fff;
-  color: #000;
-  border: none;
   padding: 10px 20px;
   font-size: 1rem;
-  border-radius: 8px;
+  background: #f5eeef;
+  border: none;
+  border-radius: 20px;
   cursor: pointer;
-  transition: opacity 0.5s ease;
+  color: rgb(5, 2, 2);
+  transition: 0.3s;
 }
-
 .btn:hover {
-  opacity: 0.8;
+  background: #b1acad;
 }
-
-/* The "paper" letter box */
 .letter {
   display: none;
-  position: relative; /* necessary for absolute positioning inside */
-  background: #fff;
-  color: #000;
-  max-width: 400px;
-  width: 90%;
-  padding: 40px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #fdf6e3 0px,
+    #fdf6e3 27px,
+    #d2d2d2 28px
+  );
+  color: #333;
+  padding: 30px 30px 30px 70px;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  width: 80%;
+  max-width: 500px;
+  height: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  font-size: 1.1rem;
+  line-height: 1.6;
   text-align: left;
-  white-space: pre-line;
+  position: relative;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font-family: "Courier New", monospace;
+  overflow: visible;
+}
+.letter p {
+  margin-top: -55px;
+  overflow: hidden;
+}
+.letter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 100%;
+  background-image: radial-gradient(circle, #1e1e2f 6px, transparent 7px);
+  background-size: 25px 40px;
+  background-repeat: repeat-y;
+  background-position: center;
+  pointer-events: none;
 }
 
-/* Signature as a small anchored button */
+/* Signature button at bottom-right of the paper */
 .signature {
   position: absolute;
-  bottom: 10px;
-  right: 15px;
-  width: 60px; /* small size */
+  bottom: 15px;
+  right: 20px;
+  width: 65px;        /* adjust to make it smaller or bigger */
   height: auto;
   cursor: pointer;
+  opacity: 0.9;
   transition: transform 0.2s ease, opacity 0.3s ease;
 }
 
 .signature:hover {
   transform: scale(1.05);
-  opacity: 0.8;
+  opacity: 1;
 }
