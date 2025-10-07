@@ -75,24 +75,5 @@ body {
   background-position: center;
   pointer-events: none;
 }
-.signature {
-  position: absolute;
-  bottom: -20px;
-  right: 6px;
-  width: 180px;
-  opacity: 0.9;
-  pointer-events: none;
-  transform: rotate(-2deg);
-}
-.signature {
-  width: 120px;           /* adjust size */
-  margin-top: 20px;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.3s ease;
-}
 
-.signature:hover {
-  transform: scale(1.05);
-  opacity: 0.8;
-}
 
