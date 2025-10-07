@@ -94,7 +94,7 @@ body {
   position: absolute;
   bottom: 15px;
   right: 20px;
-  width: 60px; /* small and neat */
+  width: 150px; /* small and neat */
   height: auto;
   cursor: pointer;
   opacity: 0.9;
