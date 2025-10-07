@@ -10,36 +10,13 @@
     <div class="intro" id="introText">
       i hope you read this, even if it's too late.
     </div>
-
-    <!-- first button -->
     <button class="btn" onclick="showLetter()">Read it</button>
 
     <div class="letter" id="letterBox">
       <p id="typedText"></p>
-
-      <!-- second button (your image acts as a button) -->
-      <img
-        src="ttd.png"
-        alt="Signature"
-        class="signature"
-        id="signatureBtn"
-        onclick="secondAction()"
-      />
+      <img src="ttd.png" alt="Signature" class="signature" />
     </div>
 
-    <script>
-      // Function for first button
-      function showLetter() {
-        document.getElementById("letterBox").style.display = "block";
-      }
-
-      // Function for the second PNG button
-      function secondAction() {
-        alert("You clicked the signature button!");
-        // 👉 You can replace this alert with whatever action you want,
-        // e.g. open another page:
-        // window.location.href = "nextpage.html";
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
