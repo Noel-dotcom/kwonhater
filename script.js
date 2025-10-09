@@ -1,4 +1,4 @@
-const message = `I miss you Lexi, I think and yearn about you everyday.\n\nI’m really sorry for everything, I'm pretty much in shambles after you left. \n\nI know you're doing better off without me, I know you don't miss and think about me, but what all that matters to me is that you're okay.\n\nI hope you’re not bullying our child Bri anymore. I pray for you everyday. I miss you and Bri.`;
+const message = `I miss you Lexi, I think and yearn about you everyday.\n\nI’m really sorry for everything, I'm pretty much in shambles after you left. \n\nYou're doing better off without me, you don't miss me, but I just hope you're doing okay.\n\nI hope you’re not bullying our child Bri anymore. I pray for you everyday. I miss you and Bri.`;
 
 function showLetter() {
   document.getElementById("introText").style.opacity = 0;
