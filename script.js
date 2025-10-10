@@ -1,6 +1,12 @@
 const message = `I miss you Lexi, I think and yearn about you everyday.\n\nI’m really sorry for everything, I'm pretty much in shambles after you left. \n\nI know you’re doing better without me and don’t miss me, but I just hope you’re okay.\n\nI hope you’re not bullying our child Bri anymore. I pray for you everyday. I miss you and Bri.`;
 
 function showLetter() {
+   // Play background music
+  document.getElementById("bgMusic").play();
+
+  // Hide intro and button
+  document.getElementById("introText").style.opacity = 0;
+  document.querySelector(".btn").style.display = "none";
   document.getElementById("introText").style.opacity = 0;
   document.querySelector(".btn").style.display = "none";
 
